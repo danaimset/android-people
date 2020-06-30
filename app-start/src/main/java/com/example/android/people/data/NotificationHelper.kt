@@ -86,6 +86,7 @@ class NotificationHelper(private val context: Context) {
             ShortcutInfo.Builder(context, contact.shortcutId)
                 .setLocusId(LocusId(contact.shortcutId))
                 .setActivity(ComponentName(context, MainActivity::class.java))
+                .setShortLabel(contact.name)
                 .setIcon(icon)
                 .setLongLived(true)
                 .setCategories(setOf("com.example.android.bubbles.category.TEXT_SHARE_TARGET"))
