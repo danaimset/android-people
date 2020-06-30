@@ -131,7 +131,9 @@ class NotificationHelper(private val context: Context) {
             // notification works as a normal notification as well.
             .setContentTitle(chat.contact.name)
             .setSmallIcon(R.drawable.ic_message)
-            // TODO 4: Associate the notification with a shortcut.
+            .setCategory(Notification.CATEGORY_MESSAGE)
+            .setShortcutId(chat.contact.shortcutId)
+            .setLocusId(LocusId(chat.contact.shortcutId))
             .addPerson(person)
             .setShowWhen(true)
             // The content Intent is used when the user clicks on the "Open Content" icon button on
